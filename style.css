@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --color: #a64717;
-    --color0: #c86517;
-    --color1: #df841d;
-    --color2: #e9a636;
-    --color3: #eebd5b;
-    --color4: #e6d5ae;
+    --color: #003439;
+    --color0: #114449;
+    --color1: #235459;
+    --color2: #346469;
+    --color3: #457479;
+    --color4: #b5d4d8;
+}
+
+.color2 {
+    background-color: var(--color2);
 }
 
 * {
@@ -24,10 +29,11 @@ html {
 
 body {
     background: rgb(229, 219, 206);
+    overflow-x: hidden;
 }
 
 
-/*HEADER*/
+/*Header*/
 
 header {
     position: fixed;
@@ -65,6 +71,13 @@ header nav .menu-horizontal {
     margin-bottom: 10px;
 }
 
+header nav .menu-horizontal li{
+    transition: transform 0.3s ease;
+}
+header nav .menu-horizontal li:hover{
+    transform: translateY(-3px);
+}
+
 header nav .menu-horizontal li a {
     position: relative;
     color: white;
@@ -95,8 +108,8 @@ header.transicion {
     display: flex;
     position: fixed;
     width: 40px;
-    top: 14px;
-    right: 30px;
+    top: 15px;
+    right: 20px;
     display: none;
     cursor: pointer;
     z-index: 2;
@@ -107,30 +120,34 @@ header.transicion {
     display: none;
     position: absolute;
     list-style: none;
-    width: 25%;
-    height: 170px;
+    height: 190px;
     right: 0;
-    top: 0;
+    top: 10px;
     background-color: var(--color0);
     text-align: center;
-    margin-top: 7vh;
     transition: .6s;
+    width: 100%;
+    top: 95%;
 }
 
 #menu-vertical.scrolled {
-    background-color: inherit !important;
-    border-bottom: 1px solid white;
+    background-color: #114449c1 !important;
+}
+
+.li-menu.scrolled {
+    background-color: #b5d4d893;
 }
 
 .barra .menu-vertical li a{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    right: 10px;
+    margin-top: 20px;
     position: relative;
-    color: white;
+    color: var(--color4);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 22px;
     transition: .4s;
     font-weight: 600;
 }
@@ -150,7 +167,8 @@ header.transicion {
 }
 
 
-/*REDES*/
+/*Redes*/
+
 .redes{
     display: grid;
     grid-template-columns: auto auto;
@@ -177,13 +195,13 @@ header.transicion {
     filter: drop-shadow(6px 6px 8px rgb(26, 26, 26));
 }
 
-/*UP*/
+/*Up*/
 
 .up{
     display: grid;
     border-radius: 13px;
-    background: var(--color0);
-    padding: 5px 1px;
+    background: var(--color1);
+    padding: 10px 10px;
     position: fixed;
     bottom: 2%;
     left: 1%;
@@ -193,24 +211,27 @@ header.transicion {
     filter: drop-shadow(6px 6px 8px rgb(26, 26, 26));
     opacity: 0;
 }
+
 .up .icon{
     position: relative;
-    width: 60px; 
     z-index: 99999;
 }
+
 .up a{
     display: block;
 }
+
 .up .icon img{
     width: 40px; 
 }
+
 .up:active{
     transform: scale(.7);
     filter: none;
 }
 
 
-/*BANNER*/
+/*Banner*/
 
 .banner {
     height: 100%;
@@ -224,17 +245,31 @@ header.transicion {
 
 .banner h1 {
     color: white;
+    font-family: "DM Serif Display", serif;
     font-weight: 400;
     padding: 65vh 0px 120px 60px;
     max-width: 890px;
     font-size: 70px;
+    animation: slideInLeft 1.4s ease-out forwards;
     filter: drop-shadow(8px 8px 7px rgb(26, 26, 26));
     z-index: -1;
 }
 
+/*Animacion*/
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 /*Mas de nosotros */
-
 
 .mas h2 {
     display: flex;
@@ -252,7 +287,7 @@ header.transicion {
     justify-content: center;
     align-items: center;
 }
-  
+
 .container-details .container-detail {
     text-align: center;
     margin: 50px;
@@ -265,173 +300,86 @@ header.transicion {
 
 .container-details .container-detail h3 {
     margin: 20px;
-    color: var(--color0);
+    color: var(--color3);
     font-size: 32px;
-    font-family: "Kalam", cursive;
+    font-family: "DM Serif Display", serif;
 }
+
 
 /*Venta*/
 
-.boton {
-    background-color: var(--color1);
-    color: black;
+.venta h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--color);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .4s;
-}
-
-.boton:hover{
-    background: var(--color3);
-    filter: drop-shadow(1px 7px 5px rgb(26, 26, 26));
-}
-
-.venta h2 {
+    margin-bottom: 60px;
     font-size: 40px;
-    text-align: center;
     font-weight: 200;
 }
 
-span {
-    color: rgb(35, 162, 35);
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.casas,.casas2 {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.casas2{
-    display: none;
-}
-
-.casa {
-    position: relative;
-    overflow: hidden;
-    align-items: center;
-    text-align: center;
-    width: 370px;
-    height: 540px;
-    margin: 23px;
-    border: 1px solid var(--color2);
-    border-radius: 16px;
-    transition: .4s;
-}
-
-.casa h3 {
-    margin: 10px;
-    font-size: 23px;
-    font-weight: 600;
-}
-
-.casa .imagen-container {
-    width: calc(95% - 20px);
-    height: calc(50% - 25px);
-    border-radius: 10px;
-    margin-left: 17px;
-    margin-top: 20px;
-    overflow: hidden;
-}
-
-.casa .foto {
-    width: 100%;
+.icono {
+    width: 24px;
     height: auto;
-    border-radius: 10px;
-    filter: brightness(0.6);
+    margin-right: 5px;
+}
+
+.card{
+    border-radius: 20px;
     transition: .4s;
+    border: none;
+    box-shadow: 5px 5px 9px #c2ccdf;
 }
 
-.casa:hover .foto {
-    transform: scale(1.1);
-    filter: brightness(0.9);
+.card:hover{
+    box-shadow: 0 0 12px #babecc;
 }
 
-.casa:hover {
-    background: var(--color4);
+.card-title {
+    font-family: "DM Serif Display", serif;
+    color: var(--color3);
+    text-align: center;
+    font-size: 25px;
+    font-weight: 200;
 }
 
-.casa .content {
-    text-align: start;
-    margin-left: 30px;
-    margin-top: 10px;
+.card-text {
+    font-size: 14px;
     font-weight: 400;
 }
 
-.casa .content p {
-    margin-bottom: 10px;
+.card .text-success {
+    color: #46b677 !important;
 }
 
-.casa .content span {
-    font-family: "Kalam", cursive;
+.card .btn{
+    width: 100%;
+    margin-top: 30px;
+    background-color: var(--color1);
+    border: var(--color3);
+    color: white;
 }
 
-.casa .content .iconos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
+.card .btn:active{
+    transform: scale(.9);
 }
 
-.casa .content .iconos img {
-    width: 38px;
+.container .btn{
+    padding: 10px 30px;
+    background-color: var(--color2);
+    border: var(--color3);
+    color: white;
 }
 
-.casa .content .iconos .cant {
-    margin-right: 25px;
-    font-weight: 600;
+.card, .container .btn:hover{
+    background-color: var(--color3);
+    border: var(--color0);
+    color: white;
 }
 
-.casa .content .iconos img {
-    margin-right: 10px;
-}
-
-.casa .content .boton{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 100px;
-    margin-right: 30px;
-}
-
-.ver-mas {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin: 30px;
-}
-
-.ver-mas #mostrar-mas{
-    padding: 10px 40px;
-    background: var(--color1);
-    border-radius: 10px;
-    margin-right: 20px;
-    transition: .4s;
-    cursor: pointer;
-}
-
-.ver-mas #mostrar-menos{
+.hidden {
     display: none;
-    padding: 10px 40px;
-    background: var(--color1);
-    border-radius: 10px;
-    margin-right: 20px;
-    transition: .4s;
-    cursor: pointer;
 }
 
-.ver-mas #mostrar-mas:hover,
-.ver-mas #mostrar-menos:hover{
-    background: var(--color3);
-}
 
 /*Contacto*/
 
@@ -442,27 +390,38 @@ span {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; 
 }
 
 .contacto h2{
     font-size: 40px;
-    font-family: "Kalam", cursive;
+    color: var(--color4);
+    font-family: "DM Serif Display", serif;
+    filter: drop-shadow(6px 6px 6px #1a1b1d);
 }
 
 .contacto .content {
     color: white;
-    padding: 25vh 0px 30px 50px;
+    padding: 18vh 0px 90px 50px;
     font-size: 25px;
 }
 
 .contacto .boton{
-    margin-top: 30px;
-    padding: 10px 20px;
+    background-color: var(--color);
+    color: var(--color4);
+    border-radius: 20px;
+    padding: 15px 50px;
     width: 200px;
-    font-size: 17px;
+    font-size: 19px;
     text-decoration: none;
+    transition: .4s;
 }
+
+.contacto .boton:hover{
+    background-color: var(--color3);
+    color: white;
+}
+
 
 /*Blogs*/
 
@@ -470,7 +429,7 @@ span {
     min-height: 110vh;
     overflow: auto;
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .blogs h2 {
@@ -481,81 +440,55 @@ span {
     margin-top: 60px;
 }
 
-.blogs a{
+.blogs .card-container:hover{
+    cursor: pointer;
+}
+
+.blogs .card-container:active{
+    transform: scale(.92);
+}
+
+.card-container a {
     text-decoration: none;
-    color: black;
 }
 
-.blogs .blog {
-    padding: 30px 10px;
-    margin-left: 20px;
-    margin-top: 20px;
-    overflow: auto;
-    float: left;
-    width: 50%;
-    border: 1px solid var(--color1);
-    border-radius: 12px;
-    transition: .4s;
+.blogs span{
+    color: var(--color3);
+    font-family: Kalam;
 }
 
-.blogs .blog:hover{
-    background: var(--color4);
-}
-
-.blogs img {
-    width: 250px;
-    border-radius: 8px;
-    margin-left: 10px;
-    float: left;
-    max-width: 100%;
-    height: auto;
-}
-
-.blog .cont {
-    overflow: hidden;
-    padding-left: 20px;
-    min-width: 400px;
-}
-
-.blog .cont h3{
-    font-size: 23px;
-    font-weight: 600;
-}
 
 /*Comentario*/
 
 .comentario h3 {
+    padding-top: 40px;
+    text-align: center;
     font-size: 40px;
-    text-align: right;
     font-weight: 200;
-    margin-right: 130px;
 }
 
 .comentario aside {
+    border-radius: 5px;
+    color: var(--color);
     position: absolute;
-    top: 220px;
+    top: 170px;
     right: 50px;
     width: 25%;
-    padding: 10px 15px 30px;
+    padding: 0px 15px 0px;
     box-sizing: border-box;
-    background-color: var(--color3);
-    filter: drop-shadow(6px 6px 6px rgb(26, 26, 26));
-}
-
-.comentario aside img {
-    width: 45px;
-    margin-left: 40%;
-    position: absolute;
+    background-color: var(--color4);
+    filter: drop-shadow(6px 6px 6px #b3b5c0);
 }
 
 .comentario aside p {
-    font-family: "Kalam", cursive;
     padding: 10px 15px;
     font-size: 22px;
+    padding-bottom: 30px;
 }
 
 
-/*FOOTER*/
+/*Footer*/
+
 footer {
     background-color: var(--color0);
     width: 100%;
@@ -617,53 +550,53 @@ footer {
     margin: 0 auto;
 }
 
-.foot .derechos {
+.derechos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
     color: var(--color4);
     background: var(--color);
 }
+.derechos p{
+    margin-top: 15px;
+}
 
 
-@media only screen and (max-width: 1100px) {
+/*Responsive*/
+
+@media only screen and (max-width: 1300px) {
     .container-details {
         grid-template-columns: 1fr;
     }
 
     .blogs {
+        margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .blogs .blog img{
-        width: 300px;
-        float: none;
-        justify-content: center;
-    }
-
-    .blogs .blog{
-        width: calc(100% - 40px);
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
     .comentario h3{
-        margin-bottom: 30px;
         margin-right: 0px;
         text-align: center;
     }
 
     .comentario {
-        margin-top: 20px; 
+        margin-top: 4rem; 
     }
 
     .comentario aside {
         position: static; 
         width: 90%; 
         margin: 0 auto;
+    }
+
+    .container {
+        text-align: center;
+    }
+    .container .btn {
+        padding: 14px 45px;
     }
 }
 
@@ -694,6 +627,32 @@ footer {
     .foot .links3 {
       width: 25%;
     }
+
+    .contacto {
+        min-height: 65vh;
+        width: 100%;
+    }
+    
+    .contacto h2{
+        font-size: 40px;
+    }
+    
+    .contacto .content {
+        color: white;
+        padding: 25vh 0px 30px 50px;
+        font-size: 25px;
+    }
+    
+    .contacto .boton{
+        background-color: var(--color);
+        color: var(--color4);
+        border-radius: 20px;
+        margin-top: 30px;
+        padding: 15px 40px;
+        width: 200px;
+        font-size: 17px;
+        text-decoration: none;
+    }
 }
 
 
@@ -718,7 +677,9 @@ footer {
     }
 
     header .barra img {
-        margin: 10px 0; 
+        margin: 10px 7px; 
+        right: 20px;
+        width: 230px;
     }
 
     .barra .menu {
@@ -733,11 +694,61 @@ footer {
 }
 
 @media only screen and (max-width: 560px) {
-    body{
-        width: 550px;
+    body {
+        width: 100%;
     }
-    .banner h1{
-        padding: 65vh 0px 50px 30px;
-        font-size: 50px; 
+    .banner h1 {
+        padding: 25vh 20px 40px;
+        font-size: 30px;
     }
+    .card {
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+    }
+    .card-img-top {
+        height: 150px;
+        object-fit: cover;
+    }
+    .up{
+        padding: 7px 7px;
+        left: 2%;
+    }
+    .redes{
+        padding: 10px 10px;
+    }
+    .redes .icon{
+        width: 50px; 
+    }
+    .contacto .content {
+        padding: 10vh 20px;
+        font-size: 19px;
+        text-align: center;
+    }
+    .contacto h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    .contacto p {
+        text-align: left;
+        margin-left: 10px;
+        margin-bottom: 50px;
+    }
+
+    .foot .links1,
+    .foot .links2,
+    .foot .links3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .foot .links1 img {
+        width: 290px;
+        margin-left: 20px;
+    }
+    .foot .links1 p {
+        margin-bottom: 80px;
+    }
+    
 }
+
+
