@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", onInit);
 
 function onInit() {
+  const menuIcon = document.querySelector('.menu');
+  const menuVertical = document.getElementById('menu-vertical');
+  let menuVisible = false;
+
+  menuIcon.addEventListener('click', toggleMenu);
+
+  function toggleMenu() {
+    menuVisible = !menuVisible;
+
+    if (menuVisible) {
+      menuVertical.style.display = 'block';
+    } else {
+      menuVertical.style.display = 'none';
+    }
+  }
+
   window.addEventListener("scroll", transicion);
 
   function transicion() {
