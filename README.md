@@ -1,8 +1,8 @@
-# Real Estate Project 🏠
+# 🏠 Real Estate Project
 
 This project is a web application developed as part of the Laboratory 3 course of the Programming technical degree taught at UTN-fra. The app focuses on showcasing luxury properties for sale, along with a real estate related blog.
 
-## Features 🌟
+## 🌟 Features
 
 - **Navigation**: Horizontal and vertical menu to easily access the sections of the page.
 - **Image carousel**: Automatic change of images in the banner section.
@@ -10,7 +10,7 @@ This project is a web application developed as part of the Laboratory 3 course o
 - **Blog**: Section for articles about real estate, with the option to expand or contract the view of the posts.
 - **Contact form**: Invites users to contact the real estate agency to find their ideal home.
 
-## Project Structure 📁
+## 📁 Project Structure
 
 - `index.html`: Contains the main structure of the project.
 - `style.css`: Custom style sheet.
@@ -27,6 +27,6 @@ This project is a web application developed as part of the Laboratory 3 course o
 - ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 
-## Authors ✍️
+## ✍️ Authors
 
-- **[Joaquín Casasola](https://github.com/tu-usuario)** - FullStack / Frontend Developer
+- **[Joaquín Casasola](https://github.com/JoacoCasasola)** - FullStack / Frontend Developer
